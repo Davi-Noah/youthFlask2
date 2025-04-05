@@ -66,6 +66,10 @@
             <td>{{ contato.Email }}</td>
             <td>{{ contato.Telefone }}</td>
             <td>{{ contato.Tag }}</td>
+            <td>
+                {% from 'buttons.html' import buttons %}
+                {{ buttons(contato) }}
+            </td>
         </tr>
         {% endfor %}
     </tbody>
