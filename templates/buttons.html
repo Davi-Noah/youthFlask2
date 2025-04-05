@@ -6,33 +6,33 @@
     <input type="hidden" name="email" value="{{contato.Email}}">
 </form>
 
-<a href="#edit-modal-{{ contato.id }}" class="waves-effect waves-light btn-small blue modal-trigger">
+<a href="#edit-modal-{{ contato.Email }}" class="waves-effect waves-light btn-small blue modal-trigger">
     <i class="material-icons right">edit</i>Editar
 </a>
 
-<div id="edit-modal-{{ contato.id }}" class="modal">
+<div id="edit-modal-{{ contato.Email }}" class="modal">
     <div class="modal-content">
         <h4>Editar Contato</h4>
         <form action="/editar_contato" method="post">
-            <input type="hidden" name="id" value="{{ contato.Email }}">
+            <input type="hidden" name="email" value="{{ contato.Email }}">
             <div class="input-field">
-                <input type="text" id="nome-{{ contato.id }}" name="nome" value="{{ contato.Nome }}" required>
-                <label for="nome-{{ contato.id }}">Nome</label>
+                <input type="text" id="nome-{{ contato.Nome}}" name="nome" value="{{ contato.Nome }}" required>
+                <label for="nome-{{ contato.Nome }}">Nome</label>
             </div>
 
             <div class="input-field">
-                <input type="text" id="email-{{ contato.id }}" name="email" value="{{ contato.Email }}" required>
-                <label for="email-{{ contato.id }}">email</label>
+                <input type="text" id="email-{{ contato.Email }}" name="email" value="{{ contato.Email }}" disabled>
+                <label for="email-{{ contato.Email }}">email</label>
             </div>
 
             <div class="input-field">
-                <input type="text" id="celular{{ contato.id }}" name="celular" value="{{ contato.Telefone }}" required>
-                <label for="celular-{{ contato.id }}">celular</label>
+                <input type="text" id="telefone{{ contato.id }}" name="telefone" value="{{ contato.Telefone }}" required>
+                <label for="telefone-{{ contato.Telefone }}">telefone</label>
             </div>
 
             <div class="input-field">
-                <input type="text" id="tags-{{ contato.id }}" name="tags" value="{{ contato.Tag }}" required>
-                <label for="tags-{{ contato.id }}">tags</label>
+                <input type="text" id="tags-{{ contato.Tags }}" name="tags" value="{{ contato.Tag }}" required>
+                <label for="tags-{{ contato.Tags }}">tags</label>
             </div>
 
             <button type="submit" class="waves-effect waves-light btn">Salvar</button>
