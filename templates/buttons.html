@@ -1,0 +1,12 @@
+{% macro buttons(contato) %}
+<form action="/deletar_contato" method="post" style="display:inline;">
+    <button class="waves-effect waves-light btn-small red" type="submit">
+        <i class="material-icons right">delete</i>Deletar
+    </button>
+    <input type="hidden" name="email" value="{{contato.Email}}">
+</form>
+
+
+
+
+{% endmacro %}
