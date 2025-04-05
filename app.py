@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -35,6 +35,30 @@ def home_page():
     return render_template('home.html',
                            contatos=contatos)
 
+
+@app.route('/salvar_contato', methods=['POST'])
+def salvar_contato():
+    novo_contato = {
+        'Nome': request.form['nome'],
+        'Email': request.form['email'],
+        'Telefone': request.form['telefone'],
+        'Tag': request.form['tags']
+    }
+
+    contatos.append(novo_contato)
+
+    return redirect('/home')
+
+
+@app.route('/deletar_contato', methods=['GET', 'POST'])
+def deletar_contato():
+    email = request.form['email']
+    for contato in contatos:
+        if contato['Email'] == email:
+            contatos.remove(contato)
+            break
+
+    return redirect('/home')
 
 
 app.run(debug=True)
