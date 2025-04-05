@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+<ul id="nav-mobile" class="right hide-on-med-and-down">
+    <li><a href="sass.html">Contatos</a></li>
+    <li><a href="badges.html">Sobre</a></li>
+    <li><a href="collapsible.html">Sair</a></li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+    </script>
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger right" href="#modal1">Adicionar Contato</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Adicionar Contatos</h4>
+        <form action="/     " method="post">
+            <div class="input-field">
+                <input type="text" id="nome" name="nome" required>
+                <label for="nome">Nome</label>
+            </div>
+
+            <div class="input-field">
+                <input type="text" id="email" name="email" required>
+                <label for="email">email</label>
+            </div>
+
+            <div class="input-field">
+                <input type="text" id="celular" name="celular" required>
+                <label for="celular">celular</label>
+            </div>
+
+            <div class="input-field">
+                <input type="text" id="tags" name="tags" required>
+                <label for="tags">tags</label>
+            </div>
+
+            <button type="submit" class="waves-effect waves-light btn">Salvar</button>
+        </form>
+        </div>
+    </div>
+
+
+<table class="striped">
+    <thead>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Tags</th>
+        <th>Ações</th>
+    </thead>
+    <tbody>
+        {% for contato in contatos %}
+        <tr>
+            <td>{{ contato.Nome }}</td> 
+            <td>{{ contato.Email }}</td>
+            <td>{{ contato.Telefone }}</td>
+            <td>{{ contato.Tag }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

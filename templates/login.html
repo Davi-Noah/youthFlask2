@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Login</h2>
+<form action="/home">
+    <div class="input-field">
+        <input type="email" id="email" class="validate">
+        <label for="email">Email</label>
+    </div>
+    <div class="input-field">
+        <input type="password" id="password" class="validate">
+        <label for="password">Senha</label>
+    </div>
+    <button type="submit" class="waves-effect waves-light btn red darken-1">Login</button>
+</form>
+
+{% endblock %}

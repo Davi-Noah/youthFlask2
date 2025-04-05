@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Flask</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper red darken-4">
+          <a href="#" class="brand-logo">Youth Flask</a>
+          {% block nav%}{% endblock %}
+        </div>
+      </nav>
+
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+
+    <footer class="page-footer red darken-4">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Sobre a Página</h5>
+              <p class="grey-text text-lighten-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quis voluptate non blanditiis fuga, voluptatem saepe harum hic magnam corporis delectus animi ipsam illum impedit accusamus. At placeat doloribus explicabo.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Redes</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!"><img src="/static/Instagram_icon.png.webp" alt=""></a></li>
+                <li><a class="grey-text text-lighten-3" href="#!"><img src="/static/Facebook_f_logo_(2019).png" alt=""></a></li>
+                <li><a class="grey-text text-lighten-3" href="#!"><img src="/static/Wpp_logo.png" alt=""></a></li>   
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2025 Todos os direitos reservados a Davi Noah
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div>
+      </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
