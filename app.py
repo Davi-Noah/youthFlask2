@@ -30,6 +30,11 @@ def home():
     return render_template('login.html')
 
 
+@app.route('/registro')
+def registro():
+    return render_template('registro.html')
+
+
 @app.route('/home')
 def home_page():
     return render_template('home.html',
