@@ -41,7 +41,7 @@ def home_page():
                            contatos=contatos)
 
 
-@app.route('/salvar_contato', methods=['POST'])
+@app.route('/salvar_contato', methods=['GET', 'POST'])
 def salvar_contato():
     novo_contato = {
         'Nome': request.form['nome'],
