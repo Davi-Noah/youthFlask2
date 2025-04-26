@@ -62,10 +62,10 @@
     <tbody>
         {% for contato in contatos %}
         <tr>
-            <td>{{ contato.Nome }}</td> 
-            <td>{{ contato.Email }}</td>
-            <td>{{ contato.Telefone }}</td>
-            <td>{{ contato.Tag }}</td>
+            <td>{{ contato.nome }}</td> 
+            <td>{{ contato.email }}</td>
+            <td>{{ contato.telefone }}</td>
+            <td>{{ contato.tags }}</td>
             <td>
                 {% from 'buttons.html' import buttons %}
                 {{ buttons(contato) }}
