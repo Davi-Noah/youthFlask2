@@ -78,12 +78,11 @@ def salvar_contato():
 @app.route('/deletar_contato', methods=['GET', 'POST'])
 def deletar_contato():
     email = request.form['email']
-    for contato in contatos:
-        if contato['Email'] == email:
-            contatos.remove(contato)
-            break
+    contato = session.query(Contato).filter_by(email=email).first()
+    session.delete(contato)
+    session.commit()
 
-    return redirect('/home')
+    return redirect('/')
 
 
 @app.route('/editar_contato', methods=['GET', 'POST'])
