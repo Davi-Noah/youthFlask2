@@ -94,6 +94,7 @@ def editar_contato():
     contato.telefone = request.form['telefone']
     contato.tags = request.form['tags']
     session.commit()
+    
 
     return redirect('/')
 

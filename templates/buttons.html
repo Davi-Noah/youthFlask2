@@ -6,15 +6,15 @@
     <input type="hidden" name="email" value="{{contato.email}}">
 </form>
 
-<a href="#edit-modal-{{ contato.Email }}" class="waves-effect waves-light btn-small blue modal-trigger">
+<a href="#edit-modal-{{ contato.email }}" class="waves-effect waves-light btn-small blue modal-trigger">
     <i class="material-icons right">edit</i>Editar
 </a>
 
-<div id="edit-modal-{{ contato.Email }}" class="modal">
+<div id="edit-modal-{{ contato.email }}" class="modal">
     <div class="modal-content">
         <h4>Editar Contato</h4>
         <form action="/editar_contato" method="post">
-            <input type="hidden" name="email" value="{{ contato.Email }}">
+            <input type="hidden" name="email" value="{{ contato.email }}">
             <div class="input-field">
                 <input type="text" id="nome-{{ contato.nome }}" name="nome" value="{{ contato.nome }}" required>
                 <label for="nome-{{ contato.nome }}">Nome</label>
