@@ -16,23 +16,23 @@
         <form action="/editar_contato" method="post">
             <input type="hidden" name="email" value="{{ contato.Email }}">
             <div class="input-field">
-                <input type="text" id="nome-{{ contato.Nome}}" name="nome" value="{{ contato.Nome }}" required>
-                <label for="nome-{{ contato.Nome }}">Nome</label>
+                <input type="text" id="nome-{{ contato.nome }}" name="nome" value="{{ contato.nome }}" required>
+                <label for="nome-{{ contato.nome }}">Nome</label>
             </div>
 
             <div class="input-field">
-                <input type="text" id="email-{{ contato.Email }}" name="email" value="{{ contato.Email }}" disabled>
-                <label for="email-{{ contato.Email }}">email</label>
+                <input type="text" id="email-{{ contato.email }}" name="email" value="{{ contato.email }}" disabled>
+                <label for="email-{{ contato.email }}">email</label>
             </div>
 
             <div class="input-field">
-                <input type="text" id="telefone{{ contato.Telefone }}" name="telefone" value="{{ contato.Telefone }}" required>
-                <label for="telefone-{{ contato.Telefone }}">telefone</label>
+                <input type="text" id="telefone{{ contato.telefone }}" name="telefone" value="{{ contato.telefone }}" required>
+                <label for="telefone-{{ contato.telefone }}">telefone</label>
             </div>
 
             <div class="input-field">
-                <input type="text" id="tags-{{ contato.Tags }}" name="tags" value="{{ contato.Tag }}" required>
-                <label for="tags-{{ contato.Tags }}">tags</label>
+                <input type="text" id="tags-{{ contato.tags }}" name="tags" value="{{ contato.tags }}" required>
+                <label for="tags-{{ contato.tags }}">tags</label>
             </div>
 
             <button type="submit" class="waves-effect waves-light btn">Salvar</button>

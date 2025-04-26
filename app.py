@@ -88,14 +88,14 @@ def deletar_contato():
 @app.route('/editar_contato', methods=['GET', 'POST'])
 def editar_contato():
     email = request.form['email']
-    for contato in contatos:
-        if contato['Email'] == email:
-            contato['Nome'] = request.form['nome']
-            contato['Telefone'] = request.form['telefone']
-            contato['Tag'] = request.form['tags']
-            break
+    contato = session.query(Contato).filter_by(email=email).first()
 
-    return redirect('/home')
+    contato.nome = request.form['nome']
+    contato.telefone = request.form['telefone']
+    contato.tags = request.form['tags']
+    session.commit()
+
+    return redirect('/')
 
 app.run(debug=True)
 
