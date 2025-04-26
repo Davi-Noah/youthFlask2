@@ -53,16 +53,26 @@ def registro():
 
 @app.route('/salvar_contato', methods=['GET', 'POST'])
 def salvar_contato():
-    novo_contato = {
+    informacoes = {
         'Nome': request.form['nome'],
         'Email': request.form['email'],
         'Telefone': request.form['telefone'],
-        'Tag': request.form['tags']
+        'Tag': request.form['tags'],
+        'User_id': flask_session['user_id']
     }
 
-    contatos.append(novo_contato)
+    novo_contato = Contato(
+        nome=informacoes['Nome'],
+        email=informacoes['Email'],
+        telefone=informacoes['Telefone'],
+        tags=informacoes['Tag'],
+        user_id=informacoes['User_id']
+    )
 
-    return redirect('/home')
+    session.add(novo_contato)
+    session.commit()
+
+    return redirect('/')
 
 
 @app.route('/deletar_contato', methods=['GET', 'POST'])
